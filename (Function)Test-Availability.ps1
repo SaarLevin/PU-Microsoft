@@ -24,7 +24,7 @@ function Test-Availability {
             Status    = "UP"
         }
         $check = Test-Connection -ComputerName $ComputerName -Quiet -Count 3
-        if (!($check)) { $obj | Add-Member -Name Status -Value Down -Force }
+        if (!($check)) { $obj | Add-Member -Name Status -Value "Down" -Force }
         $colStatus += $obj
     }
     End { $colStatus }
